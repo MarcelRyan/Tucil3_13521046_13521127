@@ -22,7 +22,7 @@ def parse(filename):
         for line in range(1, 2 * number_of_vertices + 1, 2):
             # EXTRACT DATA
             loc_name = lines[line].strip()
-            loc_latitude, loc_longtitude = lines[line+1].strip().split(" ")
+            loc_latitude, loc_longtitude = map(float, lines[line+1].strip().split(", "))
 
             # CREATE LOCATION
             location = Location(loc_name, loc_latitude, loc_longtitude)
@@ -37,5 +37,3 @@ def parse(filename):
 
     # RETURN LOCATIONS AND ADJACENCY MATRIX
     return locations, adjacency
-
-parse("test1.txt")
