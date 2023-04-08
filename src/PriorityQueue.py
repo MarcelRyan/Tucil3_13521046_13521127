@@ -1,4 +1,4 @@
-from graph import *
+from datatype.Graph import *
 
 class PriorityQueue:
     # CONSTRUCTOR 
