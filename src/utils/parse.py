@@ -11,29 +11,33 @@ def parse(filename):
     # CREATE ADJACENCY MATRIX
     adjacency = []
 
-    # OPEN FILE
-    with open(filepath, 'r') as f:
-        lines = f.readlines()
+    try: 
+        # OPEN FILE
+        with open(filepath, 'r') as f:
+            lines = f.readlines()
 
-        # FIRST LINE : NUMBER OF VERTICES
-        number_of_vertices = int(lines[0])
+            # FIRST LINE : NUMBER OF VERTICES
+            number_of_vertices = int(lines[0])
 
-        # VERTICES LOCATION
-        for line in range(1, 2 * number_of_vertices + 1, 2):
-            # EXTRACT DATA
-            loc_name = lines[line].strip()
-            loc_latitude, loc_longtitude = map(float, lines[line+1].strip().split(", "))
+            # VERTICES LOCATION
+            for line in range(1, 2 * number_of_vertices + 1, 2):
+                # EXTRACT DATA
+                loc_name = lines[line].strip()
+                loc_latitude, loc_longtitude = map(float, lines[line+1].strip().split(", "))
 
-            # CREATE LOCATION
-            location = Location(loc_name, loc_latitude, loc_longtitude)
+                # CREATE LOCATION
+                location = Location(loc_name, loc_latitude, loc_longtitude)
 
-            # APPEND TO LOCATION LIST
-            locations.append(location)
+                # APPEND TO LOCATION LIST
+                locations.append(location)
 
-        # ADJACENCY MATRIX
-        for line in range(2 * number_of_vertices + 1, len(lines)):
-            row = list(map(int, lines[line].split()))
-            adjacency.append(row)
+            # ADJACENCY MATRIX
+            for line in range(2 * number_of_vertices + 1, len(lines)):
+                row = list(map(int, lines[line].split()))
+                adjacency.append(row)
 
-    # RETURN LOCATIONS AND ADJACENCY MATRIX
-    return locations, adjacency
+        # RETURN LOCATIONS AND ADJACENCY MATRIX
+        return locations, adjacency
+    except Exception as e:
+        print(e)
+        

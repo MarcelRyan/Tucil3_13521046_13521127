@@ -44,5 +44,9 @@ def index():
     return m._repr_html_()
 
 if __name__ == '__main__':
-    result = main_program()
-    app.run(debug=False)
+    try:
+        result = main_program()
+        app.run(debug=False)
+    except:
+        print("""Since the txt file didn't suit the format we use, you can use another
+            txt file by running the program again :)""")

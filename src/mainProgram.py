@@ -31,7 +31,7 @@ def main_program():
     # INITIALIZE GRAPH
     filename = testCaseList[filenameIndex-1]
     graph = Graph(filename)
-
+    
     # PRINT ALL LOCATION NAME AVAILABLE IN FILE
     print(f'''ALL LOCATIONS IN {filename} :''')
     graph.printNames()
@@ -118,3 +118,5 @@ TO VIEW VISUALIZER:
     destination_loc = graph.findLocation(destination)
 
     return graph.locations, graph.adjacencyMatrix, source_loc, destination_loc, shortest_routes
+
+# CATCH ERROR IF TXT FILE IS NOT VALID
