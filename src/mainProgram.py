@@ -1,5 +1,5 @@
-from graph import Graph
-from astar import astar
+from datatype.Graph import Graph
+from lib.astar import astar
 
 def main_program():
     # HEADER
