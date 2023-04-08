@@ -44,3 +44,8 @@ class Graph:
             for j in range(len(self.locations)):
                 if (self.adjacencyMatrix[i][j] == 1):
                     self.locations[i].addNeighbour(self.locations[j].name)
+    
+    # Print names of all locations
+    def printNames(self):
+        for i in range(len(self.locations)):
+            print(f'''[{i+1}] {self.locations[i].name}''')
