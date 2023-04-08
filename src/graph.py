@@ -3,21 +3,44 @@ from parse import *
 from haversine import *
 
 class Graph:
-    # Kalau mau ganti gas aja w jg msh blm yakin
+    '''
+    Class Graph for mapping the map
+    '''
 
-    # Locations as vertices and adjacencyMatrix as edges (?)
+    # CONSTRUCTOR
     def __init__(self, filename):
+        '''
+        locations: list of Location in the map
+        adjacencyMatrix: adjacency matrix of locations in map
+        '''
         self.locations, self.adjacencyMatrix = parse(filename)
     
-    # Function to search location with name equal to parameter name
+    # FIND LOCATION BY NAME
     def findLocation(self, name):
         for location in self.locations:
             if (location.getName() == name):
                 return location
     
+    # FIND LOCATION BY INDEX
+    def findByIndex(self, index):
+        return self.locations[index]
+    
+    # FIND INDEX LOCATION
+    def findLocationIndex(self, location):
+        for index in range(len(self.locations)):
+            if (self.locations[index] == location):
+                return index
+
     # Function to set all weight for location that are neighbors
     def setAllLocationWeight(self):
         for i in range(len(self.locations)):
             for j in range(len(self.locations)):
                 if (self.adjacencyMatrix[i][j] == 1):
                     self.locations[i].addWeight(self.locations[j], haversine(self.locations[i], self.locations[j]))
+    
+    # SET NEIGHBOUR OF ALL LOCATIONS
+    def setNeighbour(self):
+        for i in range(len(self.locations)):
+            for j in range(len(self.locations)):
+                if (self.adjacencyMatrix[i][j] == 1):
+                    self.locations[i].addNeighbour(self.locations[j].name)
