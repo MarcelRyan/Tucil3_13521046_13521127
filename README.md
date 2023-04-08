@@ -10,6 +10,11 @@ Implementasi Algoritma UCS dan A\* untuk Menentukan Lintasan Terpendek
 ```bash
 pip install flask
 ```
+- Folium, to install :
+
+```bash
+pip install folium
+```
 
 ## Running the Program
 
