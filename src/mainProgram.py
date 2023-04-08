@@ -1,6 +1,7 @@
 from datatype.Graph import Graph
 from lib.astar import astar
 from lib.ucs import ucs
+import os
 
 def main_program():
     # HEADER
@@ -10,8 +11,25 @@ def main_program():
         =============================================
     ''')
     
-    # INPUT FILENAME
-    filename = input("Input filename [name].txt : ")
+    # GET ALL TEST CASE THAT IS AVAILABLE
+    path = r".\tests"
+    testCaseList = os.listdir(path)
+
+    # PRINT ALL AVAILABLE TEST CASES
+    print("LIST OF TEST CASES : ")
+    for i in range(len(testCaseList)):
+        print(f"[{i+1}] {testCaseList[i]}")
+
+    # INPUT FILENAME INDEX 
+    filenameIndex = int(input("Input filename number (based on list above) : "))
+
+    # VALIDATING FILENAME INDEX INPUT
+    while (filenameIndex > len(testCaseList)):
+        print("Input number based on numbers of above list!!")
+        filenameIndex = int(input("Input filename number (based on list above) : "))
+
+    # INITIALIZE GRAPH
+    filename = testCaseList[filenameIndex-1]
     graph = Graph(filename)
 
     # PRINT ALL LOCATION NAME AVAILABLE IN FILE
