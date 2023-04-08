@@ -36,7 +36,7 @@ class Location:
     
     # Key dictionarynya lokasi tetangganya
     def addWeight(self, Loc, weight):
-        self.weight[Loc] = weight
+        self.weight[Loc.getName()] = weight
 
     # ADD NEIGHBOUR
     def addNeighbour(self, neighbour):
