@@ -1,5 +1,5 @@
 from math import radians, sin, cos, sqrt, atan2
-from Location import Location
+from datatype.Location import Location
 
 def haversine(location1 : Location, location2 : Location):
     # GET LATITUDE AND LONGTITUDE
