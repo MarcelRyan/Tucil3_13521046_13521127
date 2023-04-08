@@ -1,5 +1,6 @@
 from datatype.Graph import Graph
 from lib.astar import astar
+from lib.ucs import ucs
 
 def main_program():
     # HEADER
@@ -13,11 +14,30 @@ def main_program():
     filename = input("Input filename [name].txt : ")
     graph = Graph(filename)
 
-    # INPUT SOURCE
-    source = input('Input source location name : ')
+    # PRINT ALL LOCATION NAME AVAILABLE IN FILE
+    print(f'''ALL LOCATIONS IN {filename} :''')
+    graph.printNames()
+
+    # INPUT SOURCE INDEX
+    sourceIndex = int(input('Input source location number : '))
     
-    # INPUT DESTINATION
-    destination = input('Input destination location name : ')
+    # VALIDATING SOURCE INDEX INPUT
+    while (sourceIndex > len(graph.locations)):
+        print("Input number based on the location number above")
+        sourceIndex = int(input('Input source location number : '))
+
+    
+    # INPUT DESTINATION INDEX
+    destinationIndex = int(input('Input destination location number : '))
+
+    # VALIDATING DESTINATION INDEX INPUT
+    while (destinationIndex > len(graph.locations)):
+        print("Input number based on the location number above")
+        destinationIndex = int(input('Input destination location number : '))
+    
+    # GET SOURCE AND DESTINATION LOCATION
+    source = graph.locations[sourceIndex-1].name
+    destination = graph.locations[destinationIndex-1].name
 
     # INPUT ALGORITHM CHOICE
     print('''\n
@@ -32,14 +52,16 @@ def main_program():
     # SELECT ALGORITHM
     result = None
     if choice == 1:
-        pass
+        result = ucs(graph, source, destination)
+        distance = result[0]
+        route = result[2]
     else :
         result = astar(graph, source, destination)
+        distance = result.f 
+        route = result.route.replace(' ', ' - ')
     
     # PRINT RESULT
     print(result)
-    distance = result.f 
-    route = result.route.replace(' ', ' - ')
     print(f'''
         ============ RESULT ============
         Filename        : {filename}
