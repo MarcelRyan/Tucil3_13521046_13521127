@@ -19,12 +19,12 @@ def main_program():
     print("LIST OF TEST CASES : ")
     for i in range(len(testCaseList)):
         print(f"[{i+1}] {testCaseList[i]}")
-
+    print("\n")
     # INPUT FILENAME INDEX 
     filenameIndex = int(input("Input filename number (based on list above) : "))
 
     # VALIDATING FILENAME INDEX INPUT
-    while (filenameIndex > len(testCaseList)):
+    while (filenameIndex > len(testCaseList) or filenameIndex <= 0):
         print("Input number based on numbers of above list!!")
         filenameIndex = int(input("Input filename number (based on list above) : "))
 
@@ -35,12 +35,12 @@ def main_program():
     # PRINT ALL LOCATION NAME AVAILABLE IN FILE
     print(f'''ALL LOCATIONS IN {filename} :''')
     graph.printNames()
-
+    print("\n")
     # INPUT SOURCE INDEX
     sourceIndex = int(input('Input source location number : '))
     
     # VALIDATING SOURCE INDEX INPUT
-    while (sourceIndex > len(graph.locations)):
+    while (sourceIndex > len(graph.locations) or sourceIndex <= 0):
         print("Input number based on the location number above")
         sourceIndex = int(input('Input source location number : '))
 
@@ -49,7 +49,7 @@ def main_program():
     destinationIndex = int(input('Input destination location number : '))
 
     # VALIDATING DESTINATION INDEX INPUT
-    while (destinationIndex > len(graph.locations)):
+    while (destinationIndex > len(graph.locations) or destinationIndex <= 0):
         print("Input number based on the location number above")
         destinationIndex = int(input('Input destination location number : '))
     
@@ -79,7 +79,6 @@ def main_program():
         route = result.route.replace(' ', ' - ')
     
     # PRINT RESULT
-    print(result)
     print(f'''
         ============ RESULT ============
         Filename        : {filename}
