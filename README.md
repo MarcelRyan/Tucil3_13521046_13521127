@@ -10,6 +10,7 @@ Implementasi Algoritma UCS dan A\* untuk Menentukan Lintasan Terpendek
 ```bash
 pip install flask
 ```
+
 - Folium, to install :
 
 ```bash
@@ -27,8 +28,10 @@ py src/app.py
 
 3. Fill in the inputs requested properly
 4. Open localhost:5000 to visualize
+5. Re-run program if you want to do another search
 
 ## About the Program
+
 ![image](https://user-images.githubusercontent.com/88904787/230920406-48adcf8e-59b6-4b76-a096-f188c8a8eaba.png)
 
 - Red Point : Source Location
