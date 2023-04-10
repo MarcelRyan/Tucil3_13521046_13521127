@@ -42,3 +42,9 @@ py src/app.py
 
 Note : Hover the point to view location name <br>
 ![image](https://user-images.githubusercontent.com/88904787/230920616-e72a15cf-f387-4ff8-a066-b92e6835828b.png)
+
+## Authors
+NIM  | Nama Anggota
+------------- | -------------
+13521046  | Jeffrey Chow
+13521127  | Marcel Ryan Antony 
