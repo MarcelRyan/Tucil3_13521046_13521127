@@ -42,7 +42,7 @@ class Graph:
     def setNeighbour(self):
         for i in range(len(self.locations)):
             for j in range(len(self.locations)):
-                if (self.adjacencyMatrix[i][j] == 1):
+                if (self.adjacencyMatrix[i][j] > 0):
                     self.locations[i].addNeighbour(self.locations[j].name)
     
     # Print names of all locations
