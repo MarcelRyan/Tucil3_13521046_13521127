@@ -6,9 +6,9 @@ import os
 def main_program():
     # HEADER
     print('''\n
-        =============================================
-        UCS and A* Algorithm for Closest Path Finding
-        =============================================
+=============================================
+UCS and A* Algorithm for Closest Path Finding
+=============================================
     ''')
     
     # GET ALL TEST CASE THAT IS AVAILABLE
@@ -59,9 +59,9 @@ def main_program():
 
     # INPUT ALGORITHM CHOICE
     print('''\n
-        Algorithm :
-        [1] Uniform Cost Search (UCS)
-        [2] A*
+Algorithm :
+[1] Uniform Cost Search (UCS)
+[2] A*
     ''')
     choice = -1
     while choice < 1 or choice > 2 :
@@ -80,12 +80,12 @@ def main_program():
     
     # PRINT RESULT
     print(f'''
-        ============ RESULT ============
-        Filename        : {filename}
-        Source          : {source}
-        Destination     : {destination}
-        Distance (km)   : {distance}
-        Route           : {route}
+============ RESULT ============
+Filename        : {filename}
+Source          : {source}
+Destination     : {destination}
+Distance (km)   : {distance}
+Route           : {route}
     ''')
 
     print('''
@@ -96,6 +96,7 @@ TO VIEW VISUALIZER:
     Blue Point  : Regular Location
     Blue Line   : Shortest Route from source to destination
     Green Line  : Regular Route
+[3] Hover on each Point to see the location name
     ''')
 
     # DATA MANIPULATION FOR VISUALIZING
@@ -118,4 +119,3 @@ TO VIEW VISUALIZER:
 
     return graph.locations, graph.adjacencyMatrix, source_loc, destination_loc, shortest_routes
 
-# CATCH ERROR IF TXT FILE IS NOT VALID
