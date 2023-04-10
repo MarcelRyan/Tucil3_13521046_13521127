@@ -30,13 +30,6 @@ class Graph:
         for index in range(len(self.locations)):
             if (self.locations[index] == location):
                 return index
-
-    # Function to set all weight for location that are neighbors
-    def setAllLocationWeight(self):
-        for i in range(len(self.locations)):
-            for j in range(len(self.locations)):
-                if (self.adjacencyMatrix[i][j] == 1):
-                    self.locations[i].addWeight(self.locations[j], haversine(self.locations[i], self.locations[j]))
     
     # SET NEIGHBOUR OF ALL LOCATIONS
     def setNeighbour(self):

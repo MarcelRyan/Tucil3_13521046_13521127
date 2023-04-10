@@ -14,7 +14,6 @@ class Location:
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
-        self.weight = dict() # Dictionary of location, untuk menunjukkan weight antar lokasi yang bertetangga dengan lokasi ini
         self.neighbour = []
 
     # STRING REPRESENTATION OF Location
@@ -31,13 +30,6 @@ class Location:
     def getLong(self):
         return self.longitude
     
-    def getWeight(self):
-        return self.weight
-    
-    # Key dictionarynya lokasi tetangganya
-    def addWeight(self, Loc, weight):
-        self.weight[Loc.getName()] = weight
-
     # ADD NEIGHBOUR
     def addNeighbour(self, neighbour):
         self.neighbour.append(neighbour)

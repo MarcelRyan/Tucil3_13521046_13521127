@@ -7,18 +7,12 @@ def ucs(graph: Graph, src: str, dest: str):
     # Find all location neighbors
     graph.setNeighbour()
 
-    # Find all weight for neighboring locations
-    graph.setAllLocationWeight()
-
     # Get source and destination location
     srcLoc = graph.findLocation(src)
     destLoc = graph.findLocation(dest)
 
     # Initialize priority queue
     priorityqueue = []
-
-    # Initialize isVisited array
-    isVisited = [False for i in range(len(graph.locations))]
 
     # Push source destination to priority queue
     heapq.heappush(priorityqueue, (0, srcLoc, srcLoc.name))
@@ -40,8 +34,14 @@ def ucs(graph: Graph, src: str, dest: str):
             # Get neighbor location
             neighbors = graph.findLocation(neighborsName)
 
+            # Get location index
+            locationIndex = graph.findLocationIndex(checkLocation[1])
+
+            # Get neighbor index
+            neighborIndex = graph.findLocationIndex(neighbors)
+
             # Initialize new cost or weight for the neighbor location
-            newWeight = checkLocation[0] + checkLocation[1].weight[neighborsName]
+            newWeight = checkLocation[0] + graph.adjacencyMatrix[locationIndex][neighborIndex]
 
             # Initialize new path for the neighbor location
             newPath = checkLocation[2] + " - " + neighborsName
