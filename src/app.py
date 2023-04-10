@@ -16,7 +16,7 @@ def index():
     routes = []
     for i in range(len(adjacency_matrix)):
         for j in range(i+1, len(adjacency_matrix[i])):
-            if adjacency_matrix[i][j] == 1:
+            if adjacency_matrix[i][j] > 0:
                 start = (locations[i].getLat(), locations[i].getLong())
                 end = (locations[j].getLat(), locations[j].getLong())
                 route = [start, end]
