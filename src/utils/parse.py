@@ -33,7 +33,7 @@ def parse(filename):
 
             # ADJACENCY MATRIX
             for line in range(2 * number_of_vertices + 1, len(lines)):
-                row = list(map(int, lines[line].split()))
+                row = list(map(float, lines[line].split()))
                 adjacency.append(row)
 
         # RETURN LOCATIONS AND ADJACENCY MATRIX
