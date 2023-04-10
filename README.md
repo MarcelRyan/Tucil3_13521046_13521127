@@ -29,9 +29,13 @@ py src/app.py
 4. Open localhost:5000 to visualize
 
 ## About the Program
+![image](https://user-images.githubusercontent.com/88904787/230920406-48adcf8e-59b6-4b76-a096-f188c8a8eaba.png)
 
 - Red Point : Source Location
 - Green Point : Destination Location
 - Blue Point : Regular Location
 - Blue Line : Shortest Route from source to destination
 - Green Line : Regular Route
+
+Note : Hover the point to view location name <br>
+![image](https://user-images.githubusercontent.com/88904787/230920616-e72a15cf-f387-4ff8-a066-b92e6835828b.png)
