@@ -1,4 +1,4 @@
-# Tugas Kecil IF2122 Strategi Algoritma
+# Tugas Kecil IF2211 Strategi Algoritma
 
 Implementasi Algoritma UCS dan A\* untuk Menentukan Lintasan Terpendek
 
